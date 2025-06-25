@@ -1,0 +1,93 @@
+# ========================
+# Java
+# ========================
+*.class
+*.jar
+*.war
+*.ear
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Diretórios de build
+/target/
+/build/
+
+# ========================
+# Maven
+# ========================
+.mvn/
+!/.mvn/wrapper/maven-wrapper.jar
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+
+# ========================
+# Gradle (caso use)
+/.gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Arquivos de propriedades do Gradle
+gradle-app.setting
+gradle-app.iml
+
+# ========================
+# IntelliJ IDEA
+# ========================
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# ========================
+# Eclipse
+# ========================
+.project
+.classpath
+.settings/
+.metadata/
+
+# ========================
+# VS Code
+# ========================
+.vscode/
+
+# ========================
+# Sistema operacional
+# ========================
+.DS_Store       # macOS
+Thumbs.db       # Windows
+desktop.ini     # Windows
+
+# ========================
+# Testes
+# ========================
+/test-output/
+/surefire-reports/
+/jacoco.exec
+/coverage-reports/
+
+# ========================
+# Spring Boot specific
+# ========================
+/*.db
+*.h2.db
+*.mv.db
+*.trace.db
+#/application.properties
+#/application.yml
+/application-dev.yml
+/application-prod.yml
+.env
+
+# ========================
+# Logs
+# ========================
+logs/
+*.log
