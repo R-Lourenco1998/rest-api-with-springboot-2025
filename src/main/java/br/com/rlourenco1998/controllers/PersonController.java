@@ -67,7 +67,7 @@ public class PersonController implements PersonControllerDocs {
         return service.findById(id);
     }
 
-    // @CrossOrigin(origins = {"http://localhost:8080","https://www.erudio.com.br"})
+    // @CrossOrigin(origins = {"http://localhost:8080"})
     @PostMapping(
             consumes = {
                     MediaType.APPLICATION_JSON_VALUE,

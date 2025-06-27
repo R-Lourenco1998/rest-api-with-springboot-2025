@@ -16,10 +16,10 @@ public class OpenApiConfig {
                 .title("REST API's RESTful from 0 with Java, Spring Boot, Kubernetes and Docker")
                     .version("v1")
                     .description("REST API's RESTful from 0 with Java, Spring Boot, Kubernetes and Docker")
-                    .termsOfService("https://pub.erudio.com.br/meus-cursos")
+                    .termsOfService("https://github.com/R-Lourenco1998/rest-api-with-springboot-2025")
                     .license(new License()
                         .name("Apache 2.0")
-                        .url("https://pub.erudio.com.br/meus-cursos")
+                        .url("https://github.com/R-Lourenco1998/rest-api-with-springboot-2025")
                     )
             );
     }
