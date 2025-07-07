@@ -1,10 +1,8 @@
 package br.com.rlourenco1998.services;
 
 import br.com.rlourenco1998.controllers.BookController;
-import br.com.rlourenco1998.controllers.PersonController;
 import br.com.rlourenco1998.data.dto.BookDTO;
-import br.com.rlourenco1998.data.dto.PersonDTO;
-import br.com.rlourenco1998.exception.RequiredObjectIsNullException;
+import br.com.rlourenco1998.exception.BadRequestException;
 import br.com.rlourenco1998.exception.ResourceNotFoundException;
 import br.com.rlourenco1998.model.Book;
 import br.com.rlourenco1998.repository.BookRepository;
@@ -64,7 +62,7 @@ public class BookServices {
 
     public BookDTO create(BookDTO book) {
 
-        if (book == null) throw new RequiredObjectIsNullException();
+        if (book == null) throw new BadRequestException();
 
         logger.info("Creating one Book!");
         var entity = parseObject(book, Book.class);
@@ -76,7 +74,7 @@ public class BookServices {
 
     public BookDTO update(BookDTO book) {
 
-        if (book == null) throw new RequiredObjectIsNullException();
+        if (book == null) throw new BadRequestException();
 
         logger.info("Updating one Book!");
         Book entity = repository.findById(book.getId())
