@@ -7,7 +7,7 @@ spring:
     name: rest-api-with-springboot-2025
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rest-api-springboot-estudo?useTimezone=true&serverTimezone=UTC
+    url: jdbc:mysql://localhost:3306/rest_api_springboot_estudo?useTimezone=true&serverTimezone=UTC
     username: root
     password: 1234
   jpa:
