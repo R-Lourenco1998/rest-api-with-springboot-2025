@@ -7,8 +7,6 @@ import br.com.rlourenco1998.exception.FileStorageException;
 import br.com.rlourenco1998.exception.RequiredObjectIsNullException;
 import br.com.rlourenco1998.exception.ResourceNotFoundException;
 import static br.com.rlourenco1998.mapper.ObjectMapper.parseObject;
-
-import br.com.rlourenco1998.file.exporter.contract.FileExporter;
 import br.com.rlourenco1998.file.exporter.contract.PersonExporter;
 import br.com.rlourenco1998.file.exporter.factory.FileExporterFactory;
 import br.com.rlourenco1998.file.importer.contract.FileImporter;
