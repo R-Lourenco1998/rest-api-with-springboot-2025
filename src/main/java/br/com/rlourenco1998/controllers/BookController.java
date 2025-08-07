@@ -2,7 +2,6 @@ package br.com.rlourenco1998.controllers;
 
 import br.com.rlourenco1998.controllers.docs.BookControllerDocs;
 import br.com.rlourenco1998.data.dto.BookDTO;
-import br.com.rlourenco1998.data.dto.PersonDTO;
 import br.com.rlourenco1998.services.BookServices;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
