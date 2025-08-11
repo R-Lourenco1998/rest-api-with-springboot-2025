@@ -23,10 +23,7 @@ public class BookController implements BookControllerDocs {
     @Autowired
     private BookServices service;
 
-    @GetMapping(produces = {
-            MediaType.APPLICATION_JSON_VALUE,
-            MediaType.APPLICATION_XML_VALUE,
-            MediaType.APPLICATION_YAML_VALUE})
+    @GetMapping(produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public ResponseEntity<PagedModel<EntityModel<BookDTO>>> findAll(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -37,47 +34,23 @@ public class BookController implements BookControllerDocs {
         return ResponseEntity.ok(service.findAll(pageable));
     }
 
-    @GetMapping(value = "/{id}",
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @GetMapping(value = "/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public BookDTO findById(@PathVariable("id") Long id) {
         return service.findById(id);
     }
 
-    @PostMapping(
-            consumes = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE},
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public BookDTO create(@RequestBody BookDTO book) {
         return service.create(book);
     }
 
-    @PutMapping(
-            consumes = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE},
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public BookDTO update(@RequestBody BookDTO book) {
         return service.update(book);
     }
-
 
     @DeleteMapping(value = "/{id}")
     @Override

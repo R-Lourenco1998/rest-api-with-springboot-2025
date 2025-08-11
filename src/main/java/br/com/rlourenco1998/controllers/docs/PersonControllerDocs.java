@@ -154,7 +154,7 @@ public interface PersonControllerDocs {
                                     HttpServletRequest request);
 
     @Operation(summary = "Adds a new Person",
-            description = "Adds a new person by passing in a JSON, XML or YML representation of the person.",
+            description = "Adds a new person by passing in a JSON representation of the person.",
             tags = {"People"},
             responses = {
                     @ApiResponse(
@@ -170,7 +170,7 @@ public interface PersonControllerDocs {
     PersonDTO create(@RequestBody PersonDTO person);
 
     @Operation(summary = "Updates a person's information",
-            description = "Updates a person's information by passing in a JSON, XML or YML representation of the updated person.",
+            description = "Updates a person's information by passing in a JSON representation of the updated person.",
             tags = {"People"},
             responses = {
                     @ApiResponse(

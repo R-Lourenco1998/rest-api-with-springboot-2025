@@ -64,7 +64,7 @@ public interface BookControllerDocs {
     BookDTO findById(@PathVariable("id") Long id);
 
     @Operation(summary = "Adds a new Book",
-            description = "Adds a new book by passing in a JSON, XML or YML representation of the book.",
+            description = "Adds a new book by passing in a JSON representation of the book.",
             tags = {"Book"},
             responses = {
                     @ApiResponse(
@@ -80,7 +80,7 @@ public interface BookControllerDocs {
     BookDTO create(@RequestBody BookDTO book);
 
     @Operation(summary = "Updates a book's information",
-            description = "Updates a book's information by passing in a JSON, XML or YML representation of the updated book.",
+            description = "Updates a book's information by passing in a JSON representation of the updated book.",
             tags = {"Book"},
             responses = {
                     @ApiResponse(

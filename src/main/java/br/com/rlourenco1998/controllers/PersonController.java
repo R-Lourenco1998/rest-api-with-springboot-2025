@@ -32,9 +32,7 @@ public class PersonController implements PersonControllerDocs {
     private PersonServices service;
 
     @GetMapping(produces = {
-            MediaType.APPLICATION_JSON_VALUE,
-            MediaType.APPLICATION_XML_VALUE,
-            MediaType.APPLICATION_YAML_VALUE})
+            MediaType.APPLICATION_JSON_VALUE})
     @Override
     public ResponseEntity<PagedModel<EntityModel<PersonDTO>>> findAll(
             @RequestParam(value = "page", defaultValue = "0") Integer page,
@@ -83,10 +81,7 @@ public class PersonController implements PersonControllerDocs {
                 .body(file);
     }
 
-    @GetMapping(value = "/findPeopleByName/{firstName}", produces = {
-            MediaType.APPLICATION_JSON_VALUE,
-            MediaType.APPLICATION_XML_VALUE,
-            MediaType.APPLICATION_YAML_VALUE})
+    @GetMapping(value = "/findPeopleByName/{firstName}", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public ResponseEntity<PagedModel<EntityModel<PersonDTO>>> findByName(
             @PathVariable("firstName") String firstName,
@@ -100,21 +95,13 @@ public class PersonController implements PersonControllerDocs {
     }
 
     // @CrossOrigin(origins = "http://localhost:8080")
-    @GetMapping(value = "/{id}",
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @GetMapping(value = "/{id}", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public PersonDTO findById(@PathVariable("id") Long id) {
         return service.findById(id);
     }
 
-    @GetMapping(value = "/export/{id}",
-            produces = {
-                    MediaType.APPLICATION_PDF_VALUE}
-    )
+    @GetMapping(value = "/export/{id}", produces = {MediaType.APPLICATION_PDF_VALUE})
     @Override
     public ResponseEntity<Resource> export(@PathVariable("id") Long id, HttpServletRequest request) {
 
@@ -130,53 +117,25 @@ public class PersonController implements PersonControllerDocs {
     }
 
     // @CrossOrigin(origins = {"http://localhost:8080","https://www.erudio.com.br"})
-    @PostMapping(
-            consumes = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE},
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @PostMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public PersonDTO create(@RequestBody PersonDTO person) {
         return service.create(person);
     }
 
-    @PostMapping(value = "/massCreation",
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @PostMapping(value = "/massCreation", produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public List<PersonDTO> massCreation(@RequestParam("file") MultipartFile file) {
         return service.massCreation(file);
     }
 
-    @PutMapping(
-            consumes = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE},
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @PutMapping(consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public PersonDTO update(@RequestBody PersonDTO person) {
         return service.update(person);
     }
 
-    @PatchMapping(value = "/{id}",
-            produces = {
-                    MediaType.APPLICATION_JSON_VALUE,
-                    MediaType.APPLICATION_XML_VALUE,
-                    MediaType.APPLICATION_YAML_VALUE}
-    )
+    @PatchMapping(value = "/{id}",produces = {MediaType.APPLICATION_JSON_VALUE})
     @Override
     public PersonDTO disablePerson(@PathVariable("id") Long id) {
         return service.disablePerson(id);

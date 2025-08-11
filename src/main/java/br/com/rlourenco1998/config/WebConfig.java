@@ -29,8 +29,6 @@ public class WebConfig implements WebMvcConfigurer {
             .ignoreAcceptHeader(true) // Ignora o Accept do navegador
             .useRegisteredExtensionsOnly(false)
             .defaultContentType(MediaType.APPLICATION_JSON)
-            .mediaType("json", MediaType.APPLICATION_JSON)
-             .mediaType("xml", MediaType.APPLICATION_XML)
-            .mediaType("yaml", MediaType.APPLICATION_YAML);
+            .mediaType("json", MediaType.APPLICATION_JSON);
     }
 }
