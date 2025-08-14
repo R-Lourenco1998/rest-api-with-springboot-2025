@@ -3,7 +3,7 @@ server:
 cors:
   originPatterns: http://localhost:8080,http://localhost:3000
 file:
-  upload-dir: /home/runner/work/rest-api-with-springboot-2025/uploadDir
+  upload-dir: ${java.io.tmpdir}/uploadDir
 email:
   subject: "Default Subject"
   message: "Default Message"
